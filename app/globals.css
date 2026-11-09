@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #14143a;
+}
+
+@layer components {
+  .section-label {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-brand;
+  }
+  .section-label::before {
+    content: "";
+    @apply block h-0.5 w-5 rounded-full bg-brand;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-brand-dark;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand/40 bg-white px-5 py-3 text-sm font-semibold text-brand transition hover:bg-brand-soft;
+  }
+  .card {
+    @apply rounded-2xl border border-brand/10 bg-white shadow-card;
+  }
+}
+
+/* hide the browser's own clear button on search inputs; the page has its own */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
